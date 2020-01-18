@@ -1,6 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, Image, View} from 'react-native';
 
-import Routes from './src/routes.js';
+import Routes from './src/routes/routes';
 
 export default () => <Routes />;

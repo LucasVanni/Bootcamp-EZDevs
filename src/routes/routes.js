@@ -1,13 +1,11 @@
-import {createNavigationApp, createSwitchNavigator} from 'react-navigation';
+import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 
-import Login from '../screens/Login/index';
+import Login from '../screens/login/index';
 import Main from '../screens/Main/index';
 
-export default () => {
-  createNavigationApp(
-    createSwitchNavigator({
-      Login,
-      Main,
-    }),
-  );
-};
+export default createAppContainer(
+  createSwitchNavigator({
+    Login,
+    Main,
+  }),
+);

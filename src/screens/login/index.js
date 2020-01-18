@@ -1,18 +1,21 @@
-import React, {useCallback, useState} from './node_modules/react';
-import {TouchableOpacity,, Text Image, View} from 'react-native';
+import React, {useCallback, useState} from 'react';
+import {TouchableOpacity, Text, TextInput, Image, View} from 'react-native';
 
-import logo from './src/assets/images/logo.png';
+import logo from '../../assets/images/logo.png';
 
-import api from '../services/api';
+// import api from '../services/api';
 
 export default ({navigation: {navigate}}) => {
-  const [username, setUsername] = useState('');
+  const [userName, setUserName] = useState('');
 
   // Callback -> não chama a função toda vez que terá que renderizar a tela.
-  const onSubmit = useCallback( async () => {
-    const {data: {_id: id}} = await api.post('/devs', data: {username})
-    navigate('Main', {id});
-  }, [navigate, username]);
+  const onSubmit = useCallback(() => {
+    //const {data: {_id: id}} = await api.post('/devs', data: {username})
+    // navigate('Main', {id});
+    navigate('Main');
+  }, [navigate]);
+
+  //, username
 
   return (
     <View
@@ -40,7 +43,7 @@ export default ({navigation: {navigate}}) => {
         }}
       />
       <TouchableOpacity
-        onPress={() => onSubmit(usuarname)}
+        onPress={() => onSubmit(userName)}
         style={{
           marginTop: 10,
           height: 45,
