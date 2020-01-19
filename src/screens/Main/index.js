@@ -5,7 +5,7 @@ import Logo from '../../assets/images/logo.png';
 import Dislike from '../../assets/images/dislike.png';
 import Like from '../../assets/images/like.png';
 
-import api from '../../services/api';
+// import api from '../../services/api';
 
 // export default ({navigation: {getParam, navigate}}) => {
 export default ({navigation: {navigate}}) => {
@@ -20,7 +20,9 @@ export default ({navigation: {navigate}}) => {
   // const onLike = useCallback(() => onEvaluate('likes'), [onEvaluate]);
 
   //const id = getParam('id');
-  // const onLogout = useCallback(() => navigate('login'), []);
+  const onLogout = useCallback(() => {
+    navigate('Login');
+  }, [navigate]);
 
   // const loadUsers = useCallback(async () => {
   //   const {data} = await api.get('/devs', {
